@@ -1,0 +1,74 @@
+{% extends "admin_base.html" %}
+
+{% block content %}
+
+{% if message %}
+<div class="alert alert-success alert-dismissible fade show" role="alert">
+    {{ message }}
+    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+</div>
+{% endif %}
+
+<div class="container mt-4">
+   <h2 class="mb-5 text-center fw-bold text-body">
+    <i class="bi bi-people-fill"></i> Registered Customers
+</h2>
+
+
+    <!-- ✅ Make table responsive -->
+    <div class="table-responsive">
+        <table id="myTable" class="table table-striped">
+            <thead class="table-dark">
+                <tr>
+                    <th>Id</th>
+                    <th>First Name</th>
+                    <th>Last Name</th>
+                    <th>email</th>
+                    <th>Phone</th>
+                    <th>Created At</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for customer in customers %}
+                <tr>
+                    <td>{{ customer.id }}</td>
+                    <td>{{ customer.fname }}</td>
+                    <td>{{ customer.lname }}</td>
+                    <td>{{ customer.email }}</td>
+                    <td>{{ customer.phone }}</td>
+                    <td>{{ customer.created_at }}</td>
+                    
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div> <!-- ✅ close table-responsive -->
+</div>
+
+
+<!-- jQuery -->
+<script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+
+<!-- DataTables CSS & JS -->
+<link rel="stylesheet" href="https://cdn.datatables.net/1.13.8/css/jquery.dataTables.min.css">
+<script src="https://cdn.datatables.net/1.13.8/js/jquery.dataTables.min.js"></script>
+
+<style>
+    @media (max-width: 576px) {
+        .d-inline-flex {
+            flex-wrap: nowrap;
+        }
+    }
+</style>
+
+<script>
+    $(document).ready(function () {
+        $('#myTable').DataTable({
+            paging: true,
+            searching: true,
+            info: true
+        });
+    });
+</script>
+
+{% endblock %}

@@ -1,0 +1,88 @@
+{% extends "admin_base.html" %}
+
+{% block content %}
+<div class="container mt-4">
+    <h2 class="mb-5 text-center fw-bold text-body">
+    <i class="bi bi-speedometer2"></i> Admin Dashboard
+</h2>
+
+    <hr>
+
+    <!-- Statistics Cards -->
+    <div class="row">
+        <div class="col-md-4">
+            <div class="card text-white bg-primary mb-3">
+                <div class="card-body">
+                    <h5 class="card-title">Total Customers:</h5>
+                    <p class="card-text text-center">{{ total_customers }}</p>
+                </div>
+            </div>
+        </div>
+
+
+        <div class="col-md-4">
+            <div class="card text-white bg-warning mb-3">
+                <div class="card-body">
+                    <h5 class="card-title">Total Bookings:</h5>
+                    <p class="card-text text-center text-bold">{{ total_bookings }}</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-md-4">
+            <div class="card text-white bg-danger mb-3">
+                <div class="card-body">
+                    <h5 class="card-title">Pending Bookings:</h5>
+                    <p class="card-text text-center text-bold">{{ pending_bookings }}</p>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    <!-- Recent Bookings -->
+    <h4>Recent Bookings</h4>
+    <table class="table table-bordered ">
+        <thead class="table-secondary">
+            <tr>
+                <th>Booking ID</th>
+                <th>Customer</th>
+                <th>Status</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for booking in recent_bookings %}
+            <tr>
+                <td>{{ booking.booking_id }}</td>
+                <td>{{ booking.full_name }}</td>
+                <td>
+                    {% if booking.status == "Pending" %}
+                    <span
+                        style="background-color:#ff9800; color:white; padding:4px 10px; border-radius:12px; font-size:12px;">
+                        Pending
+                    </span>
+                    {% elif booking.status == "Completed" %}
+                    <span
+                        style="background-color:#4CAF50; color:white; padding:4px 10px; border-radius:12px; font-size:12px;">
+                        Completed
+                    </span>
+                    {% elif booking.status == "In Progress" %}
+                    <span
+                        style="background-color:#2196F3; color:white; padding:4px 10px; border-radius:12px; font-size:12px;">
+                        In Progress
+                    </span>
+                    {% else %}
+                    <span
+                        style="background-color:gray; color:white; padding:4px 10px; border-radius:12px; font-size:12px;">
+                        {{ booking.status }}
+                    </span>
+                    {% endif %}
+                </td>
+
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</div>
+
+{% endblock %}

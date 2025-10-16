@@ -1,0 +1,29 @@
+{% extends "admin_base.html" %}
+
+{% block content %}
+<div id="map" style="height:400px;width:100%;"></div>
+<script src="https://maps.googleapis.com/maps/api/js?key=YOUR_API_KEY"></script>
+<script>
+  function initMap() {
+    const geocoder = new google.maps.Geocoder();
+    const map = new google.maps.Map(document.getElementById("map"), {
+      zoom: 10,
+      center: { lat: 16.99, lng: 73.3 }, // default center
+    });
+
+    geocoder.geocode({ address: "at post shorgaon tal dist ratnagiri" }, (results, status) => {
+      if (status === "OK") {
+        map.setCenter(results[0].geometry.location);
+        new google.maps.Marker({
+          map: map,
+          position: results[0].geometry.location,
+        });
+      } else {
+        alert("Geocode was not successful: " + status);
+      }
+    });
+  }
+  initMap();
+</script>
+
+{% endblock %}

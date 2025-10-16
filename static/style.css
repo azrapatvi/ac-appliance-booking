@@ -1,0 +1,314 @@
+:root {
+    --primary-color: #2c5aa0;
+    --secondary-color: #1e3d72;
+    --accent-color: #4a90c2;
+    --light-bg: #f8f9fa;
+    --dark-bg: #1a1a1a;
+}
+
+[data-bs-theme="dark"] {
+    --bs-body-bg: var(--dark-bg);
+    --bs-body-color: #ffffff;
+}
+
+.hero-section {
+    height: 100vh;
+    background: linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.6)),
+        url('https://images.unsplash.com/photo-1660330589827-da8ab7dd3c02?q=80&w=1332&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D');
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    display: flex;
+    align-items: center;
+    color: white;
+    position: relative;
+}
+
+.hero-content {
+    z-index: 2;
+}
+
+.btn-primary {
+    background: linear-gradient(45deg, #ff6b6b, #4ecdc4);
+    border: none;
+    padding: 18px 40px;
+    font-weight: 700;
+    border-radius: 50px;
+    transition: all 0.3s ease;
+    font-size: 1.1rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    box-shadow: 0 8px 30px rgba(255, 107, 107, 0.4);
+}
+
+.btn-primary:hover {
+    transform: translateY(-3px) scale(1.05);
+    box-shadow: 0 15px 40px rgba(255, 107, 107, 0.6);
+    background: linear-gradient(45deg, #ff5252, #26c6da);
+}
+
+.navbar {
+    background: rgba(255, 255, 255, 0.95) !important;
+    transition: all 0.3s ease;
+}
+
+[data-bs-theme="dark"] .navbar {
+    background: rgba(26, 26, 26, 0.95) !important;
+}
+
+/* Section subtitle text visibility fixes */
+[data-testid="booking-subtitle"],
+[data-testid="contact-subtitle"],
+[data-testid="services-subtitle"] {
+    color: #6c757d !important;
+}
+
+[data-bs-theme="dark"] [data-testid="booking-subtitle"],
+[data-bs-theme="dark"] [data-testid="contact-subtitle"],
+[data-bs-theme="dark"] [data-testid="services-subtitle"] {
+    color: #ffffff !important;
+    opacity: 0.8;
+}
+
+.service-card {
+    transition: all 0.4s ease;
+    border: none;
+    border-radius: 20px;
+    overflow: hidden;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+    position: relative;
+}
+
+.service-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+    opacity: 0;
+    transition: opacity 0.4s ease;
+}
+
+.service-card:hover::before {
+    opacity: 1;
+}
+
+.service-card:hover {
+    transform: translateY(-15px) rotateX(5deg);
+    box-shadow: 0 25px 50px rgba(0, 0, 0, 0.3);
+}
+
+.service-card>* {
+    position: relative;
+    z-index: 2;
+}
+
+.service-icon {
+    font-size: 4rem;
+    color: #fff;
+    margin-bottom: 1.5rem;
+    text-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+    transition: all 0.3s ease;
+}
+
+.service-card:hover .service-icon {
+    transform: scale(1.2) rotateY(360deg);
+}
+
+.theme-toggle {
+    background: none;
+    border: 2px solid currentColor;
+    border-radius: 50px;
+    padding: 8px 12px;
+    transition: all 0.3s ease;
+}
+
+.theme-toggle:hover {
+    background: currentColor;
+    color: white !important;
+}
+
+.section-padding {
+    padding: 80px 0;
+}
+
+.hero-stats {
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    border-radius: 15px;
+    padding: 30px;
+    margin-top: 50px;
+}
+
+.stat-number {
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: #4a90c2;
+}
+
+/* Floating Animation */
+@keyframes float {
+
+    0%,
+    100% {
+        transform: translateY(0px);
+    }
+
+    50% {
+        transform: translateY(-20px);
+    }
+}
+
+@keyframes pulse {
+    0% {
+        transform: scale(1);
+    }
+
+    50% {
+        transform: scale(1.05);
+    }
+
+    100% {
+        transform: scale(1);
+    }
+}
+
+@keyframes glow {
+
+    0%,
+    100% {
+        box-shadow: 0 0 20px rgba(255, 107, 107, 0.5);
+    }
+
+    50% {
+        box-shadow: 0 0 40px rgba(255, 107, 107, 0.8), 0 0 60px rgba(78, 205, 196, 0.8);
+    }
+}
+
+.hero-stats {
+    animation: float 6s ease-in-out infinite;
+}
+
+.btn-primary {
+    animation: glow 2s ease-in-out infinite;
+}
+
+.service-card {
+    transition: all 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+.navbar-brand {
+    animation: pulse 3s ease-in-out infinite;
+}
+
+/* Gradient Background Animation */
+.hero-section::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(45deg, #ff6b6b, #4ecdc4, #45b7d1, #96ceb4, #ffeaa7);
+    background-size: 300% 300%;
+    animation: gradientShift 10s ease infinite;
+    opacity: 0.1;
+    z-index: 1;
+}
+
+@keyframes gradientShift {
+    0% {
+        background-position: 0% 50%;
+    }
+
+    50% {
+        background-position: 100% 50%;
+    }
+
+    100% {
+        background-position: 0% 50%;
+    }
+}
+
+@media (max-width: 768px) {
+    .hero-section {
+        height: 70vh;
+        background-attachment: scroll;
+    }
+
+    .hero-content h1 {
+        font-size: 2.5rem;
+    }
+}
+body {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    margin: 0;
+}
+
+/* Main content should take all available space */
+main, #login, #register, #booking {
+    flex: 1 0 auto;
+}
+
+/* Footer fixed at bottom */
+footer {
+    flex-shrink: 0;
+}
+[data-bs-theme="dark"] #contact {
+    background: linear-gradient(135deg, #0d0d0d, #1a1a1a);
+    color: #e6e6e6;
+}
+
+[data-bs-theme="dark"] #contact .card {
+    background: rgba(255, 255, 255, 0.05);
+    border: none;
+    backdrop-filter: blur(10px);
+    color: #fff;
+}
+/* Booking Section Dark Mode */
+[data-bs-theme="dark"] #booking {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: #ffffff;
+}
+
+[data-bs-theme="dark"] #booking .card {
+    background: rgba(0, 0, 0, 0.6);
+    color: #fff;
+    border: none;
+    backdrop-filter: blur(10px);
+}
+
+[data-bs-theme="dark"] #booking .form-label,
+[data-bs-theme="dark"] #booking input,
+[data-bs-theme="dark"] #booking textarea {
+    color: #fff;
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+}
+[data-bs-theme="dark"] #booking .form-select {
+    color: #fff;
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+/* Make the dropdown items text visible */
+[data-bs-theme="dark"] #booking .form-select option {
+    color: #000; /* or #fff depending on preference */
+    background: white; /* dark background for dropdown items */
+}
+
+
+[data-bs-theme="dark"] #booking ::placeholder {
+    color: rgba(255, 255, 255, 0.6);
+}
+
+.d-flex .btn {
+    position: relative; /* ensures stacking context */
+    z-index: 5;         /* places button above any overlays */
+    pointer-events: auto; /* ensures clicks work */
+}

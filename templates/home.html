@@ -1,0 +1,293 @@
+{% extends "base.html" %}
+
+{% block content %}
+    <!-- Hero Section -->
+    <section id="home" class="hero-section py-5">
+    <div class="container">
+        <div class="row align-items-center">
+            <!-- Left: Text -->
+            <div class="col-lg-8 text-center text-lg-start mb-4 mb-lg-0">
+                <h1 class="fw-bold mb-3">
+                    <span class="mt-5 d-block display-4 display-lg-2" style="background: linear-gradient(45deg, #ff6b6b, #4ecdc4); -webkit-background-clip: text; -webkit-text-fill-color: transparent;">
+                        CoolAir Pro
+                    </span>
+                    <span class="d-block fs-5 fs-lg-3 text-white">
+                        AC • Fridge • Washing Machine Experts
+                    </span>
+                </h1>
+                <p class="lead mb-4 fs-6 fs-lg-3 text-white d-none d-lg-block" style="text-shadow: 2px 2px 8px rgba(0,0,0,0.7);">
+    ❄️ 24/7 Emergency Support • 🏆 Certified Experts • ⚡ Same Day Service
+</p>
+
+                <div class="d-flex flex-column flex-sm-row gap-2 gap-sm-3 justify-content-center justify-content-lg-start">
+                    <a href="/booking" class="btn btn-primary btn-lg mb-2 mb-sm-0">
+                        <i class="bi bi-calendar-check me-2"></i>Book Service Now
+                    </a>
+                    <a href="tel:+918856854030" class="btn btn-outline-light btn-lg">
+                        <i class="bi bi-telephone-fill me-2"></i>Call Now
+                    </a>
+                </div>
+            </div>
+
+            <!-- Right: Stats -->
+            <div class="col-lg-4 text-center">
+                <div class="hero-stats py-3">
+                    <div class="row">
+                        <div class="col-6">
+                            <div class="stat-number">500+</div>
+                            <p class="mb-0">Happy Customers</p>
+                        </div>
+                        <div class="col-6">
+                            <div class="stat-number">24/7</div>
+                            <p class="mb-0">Support</p>
+                        </div>
+                    </div>
+                    <hr class="my-3">
+                    <div class="row">
+                        <div class="col-6">
+                            <div class="stat-number">5★</div>
+                            <p class="mb-0">Rated Service</p>
+                        </div>
+                        <div class="col-6">
+                            <div class="stat-number">2Hr</div>
+                            <p class="mb-0">Response Time</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+    <!-- Services Section -->
+        <!-- Services Section -->
+    <section id="services" class="section-padding">
+        <div class="container">
+            <div class="row mb-5">
+                <div class="col-lg-8 mx-auto text-center">
+                    <h2 class="display-5 fw-bold mb-3" data-testid="services-title">Our Services</h2>
+                    <p class="lead" data-testid="services-subtitle">
+                        Complete Cooling & Home Appliance Solutions
+                    </p>
+                </div>
+            </div>
+            
+            <div class="row g-4">
+                <!-- ================= AC Services ================= -->
+                <div class="col-12">
+                    <h3 class="fw-bold mb-3 text-primary" style="color:rgb(114 90 182) !important">Air Conditioner</h3>
+                </div>
+
+                <div class="col-md-6 col-lg-4">
+                    <div class="card service-card h-100 p-4 text-center">
+                        <i class="bi bi-tools service-icon"></i>
+                        <h5 class="fw-bold">AC Installation</h5>
+                        <p>Professional installation of all AC types</p>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-4">
+                    <div class="card service-card h-100 p-4 text-center">
+                        <i class="bi bi-wrench service-icon"></i>
+                        <h5 class="fw-bold">AC Repair</h5>
+                        <p>Quick diagnosis and repair with genuine parts</p>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-4">
+                    <div class="card service-card h-100 p-4 text-center">
+                        <i class="bi bi-gear service-icon"></i>
+                        <h5 class="fw-bold">AC Maintenance</h5>
+                        <p>Regular servicing to keep your AC efficient</p>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-4">
+                    <div class="card service-card h-100 p-4 text-center">
+                        <i class="bi bi-droplet service-icon"></i>
+                        <h5 class="fw-bold">AC Gas Filling</h5>
+                        <p>Refrigerant refill and pressure optimization</p>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-4">
+                    <div class="card service-card h-100 p-4 text-center">
+                        <i class="bi bi-shield-check service-icon"></i>
+                        <h5 class="fw-bold">AC AMC Plans</h5>
+                        <p>Annual maintenance with priority support</p>
+                    </div>
+                </div>
+
+                <!-- ================= Fridge Services ================= -->
+                <div class="col-12 mt-5">
+                    <h3 class="fw-bold mb-3 text-primary" style="color:rgb(114 90 182) !important">Refrigerator</h3>
+                </div>
+
+                <div class="col-md-6 col-lg-4">
+                    <div class="card service-card h-100 p-4 text-center">
+                        <i class="bi bi-wrench-adjustable service-icon"></i>
+                        <h5 class="fw-bold">Fridge Repair</h5>
+                        <p>Fix cooling issues, wiring, and motor problems</p>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-4">
+                    <div class="card service-card h-100 p-4 text-center">
+                        <i class="bi bi-gear-fill service-icon"></i>
+                        <h5 class="fw-bold">Fridge Maintenance</h5>
+                        <p>Keep your refrigerator running smoothly</p>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-4">
+                    <div class="card service-card h-100 p-4 text-center">
+                        <i class="bi bi-droplet-half service-icon"></i>
+                        <h5 class="fw-bold">Fridge Gas Filling</h5>
+                        <p>Refilling refrigerant for optimal cooling</p>
+                    </div>
+                </div>
+
+                <!-- ================= Washing Machine Services ================= -->
+                <div class="col-12 mt-5">
+                    <h3 class="fw-bold mb-3 text-primary" style="color:rgb(114 90 182) !important">Washing Machine</h3>
+                </div>
+
+                <div class="col-md-6 col-lg-4">
+                    <div class="card service-card h-100 p-4 text-center">
+                        <i class="bi bi-nut service-icon"></i>
+                        <h5 class="fw-bold">Washing Machine Repair</h5>
+                        <p>Motor, drum, and wiring repairs</p>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-4">
+                    <div class="card service-card h-100 p-4 text-center">
+                        <i class="bi bi-gear-wide service-icon"></i>
+                        <h5 class="fw-bold">Washing Machine Maintenance</h5>
+                        <p>Regular servicing for long-lasting performance</p>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-4">
+                    <div class="card service-card h-100 p-4 text-center">
+                        <i class="bi bi-water service-icon"></i>
+                        <h5 class="fw-bold">Washing Machine Service</h5>
+                        <p>Complete cleaning and servicing</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    
+
+    <!-- About Section -->
+    <!-- About Section -->
+<section id="about" class="section-padding">
+    <div class="container">
+        <div class="row align-items-center">
+            <!-- Left Side: Features -->
+            <div class="col-lg-6">
+                <h2 class="display-5 fw-bold mb-4" data-testid="about-title">Why Choose CoolAir Pro?</h2>
+                <div class="row g-4">
+                    <div class="col-6">
+                        <div class="text-center">
+                            <i class="bi bi-award service-icon"></i>
+                            <h6 class="fw-bold">Certified</h6>
+                            <p class="text-muted small">Licensed & Insured</p>
+                        </div>
+                    </div>
+                    <div class="col-6">
+                        <div class="text-center">
+                            <i class="bi bi-clock service-icon"></i>
+                            <h6 class="fw-bold">Fast Service</h6>
+                            <p class="text-muted small">Same Day Response</p>
+                        </div>
+                    </div>
+                    <div class="col-6 justify-content-center align-items-center">
+                        <div class="text-center">
+                            <i class="bi bi-tools service-icon"></i>
+                            <h6 class="fw-bold">Expert Team</h6>
+                            <p class="text-muted small">AC, Fridge & Washing Machine</p>
+                        </div>
+                    </div>
+                    
+                </div>
+            </div>
+
+            <!-- Right Side: Description -->
+            <div class="col-lg-6">
+                <div class="p-4">
+                    <p class="lead" data-testid="about-description">
+                        CoolAir Pro is your trusted partner for complete <b>home appliance solutions</b> – from 
+                        <strong>Air Conditioners</strong> to <strong>Refrigerators</strong> and <strong>Washing Machines</strong>.  
+                        Our certified technicians ensure reliable, fast and affordable services with genuine parts.
+                    </p>
+                    <ul class="list-unstyled">
+                        <li class="mb-2"><i class="bi bi-check-circle-fill text-success me-2"></i>Licensed & Certified Technicians</li>
+                        <li class="mb-2"><i class="bi bi-check-circle-fill text-success me-2"></i>Transparent Pricing</li>
+                        <li class="mb-2"><i class="bi bi-check-circle-fill text-success me-2"></i>Quality Guaranteed Work</li>
+                        <li class="mb-2"><i class="bi bi-check-circle-fill text-success me-2"></i>24/7 Emergency Support</li>
+                        <li class="mb-2"><i class="bi bi-check-circle-fill text-success me-2"></i>Expertise in AC, Fridge & Washing Machine</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+    <!-- Contact Section -->
+    <!-- Contact Section -->
+<section id="contact" class="section-padding">
+    <div class="container">
+        <div class="row mb-5">
+            <div class="col-lg-8 mx-auto text-center">
+                <h2 class="display-5 fw-bold mb-3" data-testid="contact-title">Get In Touch</h2>
+                <p class="lead" data-testid="contact-subtitle">
+    Ready to serve you with professional AC, Refrigerator & Washing Machine services
+</p>
+
+            </div>
+        </div>
+        
+        <div class="row g-4">
+            <div class="col-md-6 col-lg-3">
+                <div class="card service-card h-100 p-4 text-center" data-testid="contact-phone">
+                    <div class="service-icon">
+                        <i class="bi bi-telephone"></i>
+                    </div>
+                    <h6 class="fw-bold">Call Us</h6>
+                    <a href="tel:+918856854030" class="text-decoration-none">+91-8856854030</a>
+                </div>
+            </div>
+            
+            <div class="col-md-6 col-lg-3">
+                <div class="card service-card h-100 p-4 text-center" data-testid="contact-whatsapp">
+                    <div class="service-icon">
+                        <i class="bi bi-whatsapp"></i>
+                    </div>
+                    <h6 class="fw-bold">WhatsApp</h6>
+                    <a href="https://wa.me/+918856854030" class="text-decoration-none">Quick Chat</a>
+                </div>
+            </div>
+            
+            <div class="col-md-6 col-lg-3">
+                <div class="card service-card h-100 p-4 text-center" data-testid="contact-email">
+                    <div class="service-icon">
+                        <i class="bi bi-envelope"></i>
+                    </div>
+                    <h6 class="fw-bold">Email</h6>
+                    <a href="mailto:suhailshah290@gmail.com" class="text-decoration-none">suhailshah290@gmail.com</a>
+                </div>
+            </div>
+            
+            <div class="col-md-6 col-lg-3">
+                <div class="card service-card h-100 p-4 text-center" data-testid="contact-location">
+                    <div class="service-icon">
+                        <i class="bi bi-geo-alt"></i>
+                    </div>
+                    <h6 class="fw-bold">Location</h6>
+                    <p class="mb-0 small">Serving City Wide</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+{% endblock %}

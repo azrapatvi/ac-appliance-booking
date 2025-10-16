@@ -1,0 +1,79 @@
+{% extends "base.html" %}
+
+{% block content %}
+{%if message %}
+<div class="alert alert-danger alert-dismissible fade show" role="alert">
+    {{message}}
+    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+</div>
+{% endif %}
+<section id="booking" class="section-padding bg-light">
+    <div class="container">
+        <div class="text-center mb-5">
+            <h2 class="fw-bold">Book Your Service</h2>
+            <p>Get a free quote and schedule your service today</p>
+        </div>
+
+        <form class="card p-4 shadow-sm" action="/booking" method="POST">
+            <div class="row g-3">
+                <div class="col-md-6">
+                    <label>Full Name</label>
+                    <input type="text" class="form-control" name="full_name" placeholder="Enter your name" required>
+                </div>
+                <div class="col-md-6">
+                    <label>Phone Number</label>
+                    <input type="tel" class="form-control" name="phone" placeholder="Enter your phone" required>
+                </div>
+                <div class="col-12">
+                    <label>Service Address</label>
+                    <textarea class="form-control" rows="2" name="address" placeholder="Enter your address :123 Example Street, Sample City, State"
+                        required></textarea>
+                </div>
+                <div class="col-md-6">
+                    <label>Service Type</label>
+                    <select class="form-select" name="service_type" required>
+                        <option value="">Choose Service</option>
+
+                        <!-- AC Services -->
+                        <optgroup label="Air Conditioner">
+                            <option value="ac-repair">AC Repair</option>
+                            <option value="ac-installation">AC Installation</option>
+                            <option value="ac-maintenance">AC Maintenance</option>
+                            <option value="ac-gas-filling">AC Gas Filling</option>
+                            <option value="ac-amc">AC AMC Plan</option>
+                        </optgroup>
+
+                        <!-- Fridge Services -->
+                        <optgroup label="Refrigerator">
+                            <option value="fridge-repair">Fridge Repair</option>
+                            <option value="fridge-maintenance">Fridge Maintenance</option>
+                            <option value="fridge-gas-filling">Fridge Gas Filling</option>
+                        </optgroup>
+
+                        <!-- Washing Machine Services -->
+                        <optgroup label="Washing Machine">
+                            <option value="washing-machine-repair">Washing Machine Repair</option>
+                            <option value="washing-machine-maintenance">Washing Machine Maintenance</option>
+                            <option value="washing-machine-service">Washing Machine Service</option>
+                        </optgroup>
+                    </select>
+                </div>
+
+                <div class="col-md-6">
+                    <label>Preferred Date</label>
+                    <input type="date" name="preferred_date" class="form-control" required>
+                </div>
+                <div class="col-12">
+                    <label>Additional Notes</label>
+                    <textarea class="form-control" name="additional_notes" rows="3"
+                        placeholder="Describe your AC issue or requirements"></textarea>
+                </div>
+                <div class="col-12 text-center">
+                    <button type="submit" class="btn btn-primary btn-lg">Submit Booking Request</button>
+                </div>
+            </div>
+        </form>
+    </div>
+</section>
+
+{% endblock %}

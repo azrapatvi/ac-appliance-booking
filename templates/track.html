@@ -1,0 +1,51 @@
+{% extends "base.html" %}
+
+{% block content %}
+<main class="flex-fill">
+    <div class="container mt-5">
+        <h2 class="mb-4 text-center fw-bold">
+            <i class="bi bi-card-checklist"></i> My Bookings
+        </h2>
+
+        {% if message %}
+        <div class="alert alert-danger">{{ message }}</div>
+        {% endif %}
+
+        <div class="table-responsive">
+            <table class="table table-striped">
+                <thead class="table-dark">
+                    <tr>
+                        <th>Booking ID</th>
+                        <th>Service Type</th>
+                        <th>Preferred Date</th>
+                        <th>Notes</th>
+                        <th>Status</th>
+                        <th>Created At</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for booking in bookings %}
+                    <tr>
+                        <td>{{ booking.booking_id }}</td>
+                        <td>{{ booking.service_type }}</td>
+                        <td>{{ booking.preferred_date }}</td>
+                        <td>{{ booking.additional_notes }}</td>
+                        <td>
+                            <span class="badge
+                                {% if booking.status == 'Pending' %}bg-warning text-dark
+                                {% elif booking.status == 'In Progress' %}bg-primary
+                                {% elif booking.status == 'Completed' %}bg-success
+                                {% elif booking.status == 'Cancelled' %}bg-danger
+                                {% endif %}">
+                                {{ booking.status }}
+                            </span>
+                        </td>
+                        <td>{{ booking.created_at }}</td>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </div>
+    </div>
+</main>
+{% endblock %}

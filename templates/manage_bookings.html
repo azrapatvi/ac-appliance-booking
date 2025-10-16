@@ -1,0 +1,101 @@
+{% extends "admin_base.html" %}
+
+{% block content %}
+
+{% if message %}
+<div class="alert alert-danger alert-dismissible fade show" role="alert">
+    {{ message }}
+    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+</div>
+{% endif %}
+
+<div class="container mt-4">
+    <h2 class="mb-5 text-center fw-bold text-body">
+    <i class="bi bi-journal-text"></i>Pending Customer Bookings
+</h2>
+
+    <!-- ✅ Make table responsive -->
+    <div class="table-responsive">
+        <table id="myTable" class="table table-striped">
+            <thead class="table-dark">
+                <tr>
+                    <th>Id</th>
+                    <th>Customer</th>
+                    <th>Phone no</th>
+                    <th>Address</th>
+                    <th>Service</th>
+                    <th>Date</th>
+                    <th>Notes</th>
+                    <th>Status</th>
+                    <th>Created At</th>
+                    <th>Update</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for booking in users %}
+                <tr>
+                    <td>{{ booking.booking_id }}</td>
+                    <td>{{ booking.full_name }}</td>
+                    <td>{{ booking.phone }}</td>
+                    <td><a href="/address_track?address={{booking.address}}">{{ booking.address }}</a></td>
+                    <td>{{ booking.service_type }}</td>
+                    <td>{{ booking.preferred_date }}</td>
+                    <td>{{ booking.additional_notes }}</td>
+
+                    <td>
+                        <span class="badge 
+                        {% if booking.status == 'Pending' %}bg-warning text-dark
+                        {% elif booking.status == 'In Progress' %}bg-primary
+                        {% elif booking.status == 'Completed' %}bg-success
+                        {% elif booking.status == 'Cancelled' %}bg-danger
+                        {% endif %}">
+                            {{ booking.status }}
+                        </span>
+                    </td>
+                    <td>{{ booking.created_at }}</td>
+                    <td class="text-center">
+                        <form method="POST" action="{{ url_for('update_status', booking_id=booking.booking_id) }}"
+                            class="d-flex flex-column align-items-center">
+                            <select name="status" class="form-select w-auto mb-2 text-center">
+                                <option {% if booking.status=='Pending' %}selected{% endif %}>Pending</option>
+                                <option {% if booking.status=='In Progress' %}selected{% endif %}>In Progress</option>
+                                <option {% if booking.status=='Completed' %}selected{% endif %}>Completed</option>
+                                <option {% if booking.status=='Cancelled' %}selected{% endif %}>Cancelled</option>
+                            </select>
+                            <button type="submit" class="btn btn-sm btn-danger">Update</button>
+                        </form>
+                    </td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div> <!-- ✅ close table-responsive -->
+</div>
+
+
+<!-- jQuery -->
+<script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+
+<!-- DataTables CSS & JS -->
+<link rel="stylesheet" href="https://cdn.datatables.net/1.13.8/css/jquery.dataTables.min.css">
+<script src="https://cdn.datatables.net/1.13.8/js/jquery.dataTables.min.js"></script>
+
+<style>
+    @media (max-width: 576px) {
+        .d-inline-flex {
+            flex-wrap: nowrap;
+        }
+    }
+</style>
+
+<script>
+    $(document).ready(function () {
+        $('#myTable').DataTable({
+            paging: true,
+            searching: true,
+            info: true
+        });
+    });
+</script>
+
+{% endblock %}
