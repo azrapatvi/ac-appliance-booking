@@ -70,12 +70,12 @@ Open your browser and go to http://127.0.0.1:5000.
 
 ## Default Admin Account
 
-The app automatically creates a default admin:
-
+- The app automatically creates a default admin:
+```
 Email: admin@gmail.com
 Password: admin
-
-You can change this in the create_admin_if_not_exists() function.
+```
+- can change this in the create_admin_if_not_exists() function.
 
 ### Folder Structure
 ```
